@@ -1,0 +1,165 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="row" id="news_body">
+    <!-- 新闻-->
+    <div id="news" class="col-md-offset-2 col-md-5">
+        <!-- 新闻头-->
+        <div  class="col-xs-12 title">
+            <a href="javascript:voit(0);">全部新闻</a>
+        </div>
+        <!-- 新闻内容列表-->
+        <div id="news-list" class="col-xs-12">
+            <div class="media new-posi" ng-repeat="new in newsList">
+                <div class="media-left media-middle">
+                    <a href="#">
+                        <img class="media-object" src="img/GS/news/{{new.pimg}}" alt="..." style="width: 130px;height: 100px">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{new.title}}</h4>
+                    {{new.tmsg}}
+                </div>
+                {{new.time}}
+            </div>
+            <div class="new-posi text-center" ng-click="loadMore()" ng-show="hasMore">点击加载更多</div>
+        </div>
+    </div>
+    <!-- 数据-->
+    <div class="col-md-3 col-xs-12">
+        <!-- 赛程-->
+        <div class="col-sm-12">
+            <div class="col-sm-12 title">
+                <a href="javascript:voit(0);">2016-2017球队赛程</a>
+            </div>
+            <div class="col-sm-12" style="padding: 0">
+                <table cellpadding="0" cellspacing="0" id="schedule-head">
+                    <tbody>
+                    <tr id="schedule-th">
+                        <th width="26%">日期</th>
+                        <th width="16%">时间</th>
+                        <th width="20%">对手</th>
+                        <th width="12%">结果</th>
+                        <th width="26%">比分</th>
+                    </tr>
+                    </tbody>
+                </table>
+                <table cellpadding="0" cellspacing="0" id="schedule-body">
+                        <tr>
+                        <td width="26%">05月09日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/jazz" target="_blank">爵士</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">121-95</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">05月15日</td>
+                        <td width="16%">03:30</td>
+                        <td width="20%"><a href="/spurs" target="_blank">马刺</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">113-111</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">05月17日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/spurs" target="_blank">马刺</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">136-100</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">05月21日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/spurs" target="_blank">马刺</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">120-108</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">05月23日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/spurs" target="_blank">马刺</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">129-115</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">06月02日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/cavaliers" target="_blank">骑士</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">113-91</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">06月05日</td>
+                        <td width="16%">08:00</td>
+                        <td width="20%"><a href="/cavaliers" target="_blank">骑士</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">132-113</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">06月08日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/cavaliers" target="_blank">骑士</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">118-113</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">06月10日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/cavaliers" target="_blank">骑士</a></td>
+                        <td width="12%">负</td>
+                        <td width="26%" class="lf">116-137</td>
+                    </tr>
+                    <tr>
+                        <td width="26%">06月13日</td>
+                        <td width="16%">09:00</td>
+                        <td width="20%"><a href="/cavaliers" target="_blank">骑士</a></td>
+                        <td width="12%">胜</td>
+                        <td width="26%" class="lf">129-120</td>
+                    </tr>
+                </table>
+                <div class="all">
+                    <a href="javascript:voit(0)">查看全部</a>
+                </div>
+            </div>
+        </div>
+        <!-- NBA排行榜-->
+        <div class="col-sm-12" id="rank">
+            <div class="col-sm-12 title">
+                <a href="javascript:voit(0);">NBA排行榜</a>
+            </div>
+            <div class="tab col-sm-12">
+                <li ng-click="r0()">西部</li>
+                <li ng-click="r1()">东部</li>
+            </div>
+            <div class="wrap">
+                <div class="tabview-trank mod " style="display: block;">
+                    <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td width="15%" class="t">排名</td>
+                        <td width="20%" class="t">球队</td>
+                        <td width="16%" class="t">胜</td>
+                        <td width="16%" class="t">负</td>
+                        <td width="16%" class="t">胜率</td>
+                        <td width="17%" class="t">胜差</td>
+                    </tr>
+                    <tr ng-repeat="team in tlist |orderBy:'fail'">
+                        <td><span>{{$index+1}}</span></td>
+                        <td><a target="_blank" href="/warriors">{{team.team}}</a></td>
+                        <td>{{team.win}}</td>
+                        <td>{{team.fail}}</td>
+                        <td>{{team.rate}}</td>
+                        <td>{{team.value}}</td>
+                    </tr>
+
+                    </tbody></table>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+<

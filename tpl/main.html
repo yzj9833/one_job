@@ -1,0 +1,42 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+    <div class="row GS">
+        <div class="col-md-5 col-md-offset-2 col-xs-12" id="iframe">
+                <img src="img/GS/roll_01.jpg" alt="...">
+                <!--<img src="img/GS/roll_02.jpg" alt="...">-->
+                <!--<img src="img/GS/roll_03.jpg" alt="...">-->
+                <!--<img src="img/GS/roll_04.jpg" alt="...">-->
+                <!--<img src="img/GS/roll_05.jpg" alt="...">-->
+        </div>
+        <div class="col-md-2 visible-lg visible-md">
+            <ul class="list-group">
+                <div class="panel-heading" id="term_list">球队简介</div>
+                <li class="list-group-item"
+                    style="font-size:1rem;background:#fdb926;" ng-repeat="tmsg in teamList">
+                    {{tmsg.tmsg}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-5 col-md-offset-2 col-xs-12">
+            <div class="col-xs-12 panel" style="padding: 0;background-color:#fdb926;">
+                <div class="panel-heading" style="background: #d29216">球队介绍</div>
+                <div class="panel-body"  style="background: #fdb926">
+                    {{team[0].tmsg}}
+                </div>
+            </div>
+            <div class="col-xs-12 panel" style="padding: 0;background-color:#fdb926;">
+                <div class="panel-heading" style="background: #d29216">球队球星</div>
+                <div class="panel-body"  style="background: #fdb926">
+                    <img src="img/GS/{{star}}" ng-repeat="star in stars"
+                         style="width: 31%;height: auto;margin-left:2%" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-xs-12">
+            <div class="panel-heading" style="background: #d29216">球员列表</div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="player in players" style="background:#fdb926">
+                    {{player}}</li>
+            </ul>
+        </div>
+    </div>
